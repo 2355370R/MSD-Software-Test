@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>MSD Test</title>
+
+  <!-- Custom fonts for this template-->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+  <!-- Custom styles for this template-->
+  <link href="css/sb-admin-2.min.css" rel="stylesheet">
+  <!-- Bootstrap core JavaScript-->
+  <script src="js/jquery.min.js"></script>
+  <script src="notes.js"></script>
+
+
+  <style>
+  /* The popup form - hidden by default */
+  .form-popup {
+    display: none;
+    margin: auto;
+    width: 50%;
+
+    padding: 10px;
+
+    z-index: 9;
+  }
+  /* Add styles to the form container */
+  .form-container {
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+  }
+  /* Full-width input fields */
+  .form-container input[type=text], .form-container input[type=date]  {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+  }
+  /* When the inputs get focus, do something */
+  .form-container input[type=text]:focus,.form-container input[type=date]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width:100px;
+    margin-bottom:10px;
+    opacity: 0.8;
+  }
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    background-color: red;
+  }
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+  }
+</style>
+</head>
+
+<body id="page-top">
+
+  <!-- Page Wrapper -->
+  <div id="wrapper">
+
+    <!-- Sidebar -->
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+
+      <!-- Sidebar - Brand -->
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+        <div class="sidebar-brand-icon rotate-n-15">
+          <i class="fas fa-laugh-wink"></i>
+        </div>
+        <div class="sidebar-brand-text mx-2">MSD Test</div>
+      </a>
+
+      <!-- Divider -->
+      <hr class="sidebar-divider my-0">
+
+      <!-- Nav Item - Dashboard -->
+      <li class="nav-item">
+        <a class="nav-link" href="weather.html">
+          <i class="fas fa-fw fa-cloud-moon-rain"></i>
+          <span>Weather</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="notes.html">
+            <i class="fas fa-fw fa-upload"></i>
+            <span>Notes</span></a>
+          </li>
+        </ul>
+        <!-- End of Sidebar -->
+
+        <!-- Content Wrapper -->
+        <div id="content-wrapper" class="d-flex flex-column">
+          <!-- Main Content -->
+          <div id="content">
+            <!-- Topbar -->
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow">
+
+              <!-- Topbar Navbar -->
+              <ul class="navbar-nav ml-auto">
+              </ul>
+
+            </nav>
+            <!-- End of Topbar -->
+
+            <!-- Begin Page Content -->
+            <div class="container-fluid">
+              <div class="form-popup" id="myForm">
+                <form class="form-container">
+                  <h5>New Entry</h5>
+
+                  <label for="email"><b>Title</b></label>
+                  <input type="text" placeholder="Title" id="title"  required>
+
+                  <label for="psw"><b>description</b></label>
+                  <input type="text" placeholder="description" id="description"  required>
+                  <label for="psw"><b>Entry Date</b></label>
+                  <input type="date" placeholder="Select Date" id="dateEntry"  required>
+
+                  <button type="button" class="btn"  onclick="AddEntry()">Add</button>
+                  <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+                </form>
+              </div>
+
+              <div class="form-popup" id="updateForm">
+                <form class="form-container">
+                  <h5>Update Entry</h5>
+                  <label for="psw"><b>Entry Date</b></label>
+                  <input type="text" placeholder="Select Date" id="updateDateEntry" readonly>
+
+                  <label for="email"><b>Title</b></label>
+                  <input type="text" placeholder="Title" id="updateTitle"  required>
+
+                  <label for="psw"><b>description</b></label>
+                  <input type="text" placeholder="description" id="updateDescription"  required>
+
+
+                  <button type="button" class="btn"  onclick="updateEntry()">Update</button>
+                  <button type="button" class="btn cancel" onclick="closeUpdateForm()">Close</button>
+                </form>
+              </div>
+              <!-- Page Heading -->
+              <h6 class="h6 mb-4 text-gray-800">Personal Entries </h6>
+              <button class="btn btn-primary btn-icon-split" onclick="openForm()">
+                <span class="text">Add Entry</span>
+              </button>
+            </br></br>
+
+            <div class="row" id="ol">
+
+
+
+            </div>
+
+
+          </div>
+          <!-- /.container-fluid -->
+
+        </div>
+        <!-- End of Main Content -->
+
+        <!-- Footer -->
+        <footer class="sticky-footer bg-white">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Rafi - 2019 MSD Test</span>
+            </div>
+          </div>
+        </footer>
+        <!-- End of Footer -->
+
+      </div>
+      <!-- End of Content Wrapper -->
+    </div>
+    <script>
+    </script>
+  </body>
+
+  </html>
