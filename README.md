@@ -1,4 +1,4 @@
-# MSD-Software-Test
+# MSD-Software
 CLT Web Application Developer - Technical Assessment
 
 In this Repository, There are 3 main Areas to look out for.
